@@ -10,19 +10,18 @@ function Book(title, author, year) {
 function addBookToLibrary(title, author, year) {
     myLibrary.push(new Book(title, author, year)); //adds new book to array after creating object
 
-    myLibrary.forEach((element) => {
-        //create card
-        let newCard = document.createElement('div');
-        newCard.setAttribute('class', 'card');
-        container.append(newCard);
+    const newBook = myLibrary[myLibrary.length - 1];
 
-        let newTitle = document.createElement('h1');
-        let newAuthor = document.createElement('h2');
-        let newYear = document.createElement('h3');
-        newCard.append(newTitle, newAuthor, newYear);
-        newTitle.textContent = element.title
-        newAuthor.textContent = element.author;
-        newYear.textContent = element.year;
+    let newCard = document.createElement('div');
+    newCard.classList.add('card');
+    container.append(newCard);
 
-    });
+    let newTitle = document.createElement('h1');
+    let newAuthor = document.createElement('h2');
+    let newYear = document.createElement('h3');
+    newTitle.textContent = newBook.title;
+    newAuthor.textContent = newBook.author;
+    newYear.textContent = newBook.year;
+
+    newCard.append(newTitle, newAuthor, newYear);
 };
