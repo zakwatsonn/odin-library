@@ -25,3 +25,31 @@ function addBookToLibrary(title, author, year) {
 
     newCard.append(newTitle, newAuthor, newYear);
 };
+
+//adding functionality to button
+let addButton = document.querySelector('.addBookButton');
+let form = document.querySelector('form');
+addButton.addEventListener('click', () => {
+    form.style.display = 'initial';
+});
+
+//adding submit
+let submitButton = document.querySelector('.submit');
+let titleInput = document.querySelector('#title');
+let authorInput = document.querySelector('#author');
+let yearInput = document.querySelector('#year');
+submitButton.addEventListener('click', (event) => {
+
+    //check if any of the inputs are empty
+    if (titleInput.value === '' || authorInput.value === '' || yearInput.value === '') {
+        event.preventDefault();
+        alert('Please ensure all fields are filled out');
+    } else {
+        event.preventDefault();
+        addBookToLibrary(titleInput.value, authorInput.value, yearInput.value);
+        form.style.display = 'none';
+        titleInput.value = '';
+        authorInput.value = '';
+        yearInput.value = '';
+    };
+});

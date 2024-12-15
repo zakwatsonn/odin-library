@@ -2,11 +2,32 @@ body {
     background-color: #6A8EAE;
 }
 
-.button-container {
+.form-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 1rem;
     gap: 1rem;
+}
+
+form {
+    display: none;
+}
+
+input, .submit {
+    border: 0.2rem solid #9BD1E5;
+    border-radius: 1rem;
+    padding: 0 0.5rem;
+}
+
+.submit {
+    font-family: 'Sour Gummy';
+    color:#6A8EAE;
+}
+
+label {
+    font-family: 'Sour Gummy', sans-serif;
+    color: white;
 }
 
 .addBookButton {
