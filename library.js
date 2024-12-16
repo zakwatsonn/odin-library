@@ -14,6 +14,7 @@ function addBookToLibrary(title, author, year) {
 
     let newCard = document.createElement('div');
     newCard.classList.add('card');
+    newCard.setAttribute('data', myLibrary.indexOf(newBook));
     container.append(newCard);
 
     let newTitle = document.createElement('h1');
