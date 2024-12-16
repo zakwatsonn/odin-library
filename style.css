@@ -30,7 +30,7 @@ label {
     color: white;
 }
 
-.addBookButton, .remove-button {
+.addBookButton, .remove-button, .read-toggle {
     padding: 1rem;
     font-family: 'Sour Gummy', sans-serif;
     font-weight: bold;
@@ -40,7 +40,7 @@ label {
     border-radius: 1rem;
 }
 
-.remove-button:hover {
+.remove-button:hover, .read-toggle:hover, .addBookButton:hover {
     background-color: white;
     color:#9BD1E5;
 }
@@ -64,7 +64,7 @@ label {
     border-bottom: 0.5rem solid white;
 }
 
-h1, h2, h3 {
+h1, h2, h3, p {
     margin: 0;
     font-family: sans-serif;
     color: white;

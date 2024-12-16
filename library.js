@@ -20,19 +20,33 @@ function addBookToLibrary(title, author, year) {
     let newAuthor = document.createElement('h2');
     let newYear = document.createElement('h3');
     let removeBook = document.createElement('button');
+    let readToggle = document.createElement('button');
+    readToggle.textContent = 'Read it?';
+    readToggle.classList.add('read-toggle');
     removeBook.textContent = 'Remove';
     removeBook.classList.add('remove-button');
-
-    //adding remove functionality
-    removeBook.addEventListener('click', () => {
-        newCard.remove();
-    })
-
+    let read = document.createElement('p');
+    read.textContent = 'Read';
+    
     newTitle.textContent = newBook.title;
     newAuthor.textContent = newBook.author;
     newYear.textContent = newBook.year;
 
-    newCard.append(newTitle, newAuthor, newYear, removeBook);
+    newCard.append(newTitle, newAuthor, newYear, removeBook, readToggle, read);
+
+    //adding read functionality
+    readToggle.addEventListener('click', () => {
+        if (read.style.display === 'none') {
+            read.style.display = 'initial';
+        } else if (read.style.display !== 'none') {
+            read.style.display = 'none'
+        }
+    });
+
+    //adding remove functionality
+    removeBook.addEventListener('click', () => {
+        newCard.remove();
+    });
 };
 
 //adding functionality to button
