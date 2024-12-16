@@ -30,13 +30,19 @@ label {
     color: white;
 }
 
-.addBookButton {
+.addBookButton, .remove-button {
     padding: 1rem;
     font-family: 'Sour Gummy', sans-serif;
     font-weight: bold;
     color: white;
     background-color:#9BD1E5;
     border: 0.2rem solid white;
+    border-radius: 1rem;
+}
+
+.remove-button:hover {
+    background-color: white;
+    color:#9BD1E5;
 }
 
 .container {
