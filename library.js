@@ -14,7 +14,6 @@ function addBookToLibrary(title, author, year) {
 
     let newCard = document.createElement('div');
     newCard.classList.add('card');
-    newCard.setAttribute('data', myLibrary.indexOf(newBook));
     container.append(newCard);
 
     let newTitle = document.createElement('h1');
@@ -23,6 +22,12 @@ function addBookToLibrary(title, author, year) {
     let removeBook = document.createElement('button');
     removeBook.textContent = 'Remove';
     removeBook.classList.add('remove-button');
+
+    //adding remove functionality
+    removeBook.addEventListener('click', () => {
+        newCard.remove();
+    })
+
     newTitle.textContent = newBook.title;
     newAuthor.textContent = newBook.author;
     newYear.textContent = newBook.year;
@@ -56,9 +61,4 @@ submitButton.addEventListener('click', (event) => {
         authorInput.value = '';
         yearInput.value = '';
     };
-});
-
-//remove book button functionality
-removeBook.addEventListener('click', () => {
-
 });
